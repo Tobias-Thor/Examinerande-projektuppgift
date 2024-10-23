@@ -1,0 +1,121 @@
+@use 'variables';
+
+header{
+    display: flex;
+    /*Don't need the checkbox, display none */
+    input.Dark-toggle{
+        display: none;
+    }
+    /*Only need pointer-event on the img */
+    label{
+        pointer-events: none;
+    }
+    /*margin top so it fit with the logo */
+    img.Dark-icon {
+        margin-top: 1.5rem;
+        width: 10%;
+        height: auto;
+        pointer-events: auto;
+        cursor: pointer;
+
+        &:hover{
+            /*Hover effect */
+            filter: brightness(0) saturate(100%) invert(32%) sepia(1%) saturate(3486%) hue-rotate(358deg) brightness(85%) contrast(101%);                }
+    }
+
+    img.Logo{
+        width: 30%;
+        height: auto;
+    }
+
+ 
+        label.hamburger-menu{
+            position: absolute;
+            right : 0;
+            display:flex;
+            flex-direction: column;
+            /*doesnt take up more space then content. */
+            width: max-content;
+            /* Space between the bars */
+            gap: variables.$bar-gap;
+            /* Custom margin for positioning, linked from variables */
+            margin: variables.$bar-margin;
+            /* Make sure it's on top of other elements */
+            z-index: 2;
+            pointer-events: auto;
+
+            & input{
+                /*Removes the default checkbox */
+                appearance: none;
+            
+            &:checked{
+                /*Removes the bar when its checked. */
+                opacity: 0;
+                width: 0;
+            }
+        }/*Rotate the before element, (one of the bar) */
+        &:has(input:checked)::before{
+            transform: rotate(-45deg);
+
+        }
+        /*Rotate after element so we make an X sign */
+        &:has(input:checked)::after{
+            transform: rotate(45deg);
+}
+        }
+    /* Show the navigation when the hamburger menu is checked */
+    label.hamburger-menu:has(input:checked) ~ nav {
+        position: absolute;
+        right: 0;
+        display: flex;
+        /*background color with variable */
+        background-color: variables.$meny-bg-color;
+        max-width: 20rem;
+        /* Full viewport height for the menu */
+        min-height: 100vh;
+        padding: 3rem 2rem;
+        z-index: 1;
+    }
+          /* Styles for the hamburger menu's bars */
+        label.hamburger-menu::before,
+        label.hamburger-menu::after,
+        label.hamburger-menu input {
+            content: "";
+            /* Width of the menu bars */
+            width: variables.$bar-width;
+            /* Height of the menu bars */
+            height: variables.$bar-height;
+            /* Pink color for the bars */
+            background-color: #FBC8E0;
+            /* Border around the bars */
+            border: 1px ridge rgba(0, 0, 0, 0.676);
+            /* Slight rounding for the bars */
+            border-radius: 10px;
+            /* Rotate from the right side */
+            transform-origin: right center;
+
+        }
+
+        nav{
+            /* Hidden navigation menu until the hamburger menu is clicked */
+            display: none;
+            ul{
+                li{
+                    /* Remove bullet points */
+                    list-style: none;
+                    /* Space between list items */
+                    margin: 1rem;
+                    /* Custom text color */
+                    color: variables.$meny-text-color;
+
+                    a:hover{
+                        /*Change color for hover */
+                        color: rgba(58, 58, 58, 0.39);
+                    }
+
+                }
+            }
+            
+        }
+        
+}

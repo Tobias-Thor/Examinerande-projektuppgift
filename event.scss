@@ -1,0 +1,116 @@
+// Define variables directly in event.scss 
+$primary-color: #FBC8E0; // Classic Rose for banners and link text
+$secondary-color: #D24848; // English Vermillion for sparse use
+$background-color: #F9F6EE; // Bone-white for background
+$text-color: #333; // Slightly grey for text
+
+@use 'main.scss'
+
+// // Mixin for centering elements
+// @mixin flex-center {
+//     display: flex;
+//     justify-content: center; // Centers horizontally
+//     align-items: center; // Centers vertically
+// }
+
+// // Global body styles
+// body {
+//     background-color: $background-color; // Use Bone-white for background
+//     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; // Set font family for all text
+//     font-size: 1.3rem; //Set font size for all text
+//     color: $text-color; // Set the text color to slightly grey
+
+//     // Adjust font size for smaller screens
+//     @media only screen and (max-width: 768px) {
+//         font-size: 1rem; // Smaller text on tablets
+//     }
+//     @media only screen and (max-width: 576px) {
+//         font-size: 0.9rem; // Smaller text on smartphones
+//     }
+// }
+
+// Styling for the event image
+.event-image {
+    width: 60vh; // Responsive image sizing
+    max-width: 100%; // Ensure it doesn't exceed the container width
+    height: auto; // Maintain aspect ratio
+    border-radius: 10px; // Rounded corners
+    margin-bottom: 20px; // Space below the image
+    margin-top: 20px; // Add space between the navbar and the image
+    display: block; // Ensure it behaves like a block element
+    margin-left: auto; // Center the image horizontally
+    margin-right: auto; // Center the image horizontally
+
+    // Adjust image size for smaller screens
+    @media only screen and (max-width: 768px) {
+        width: 50vh; // Smaller size on tablets
+    }
+    @media only screen and (max-width: 576px) {
+        width: 40vh; // Even smaller on smartphones
+    }
+}
+
+// Event section container
+.event-section {
+    border: 2px solid $primary-color; // Add border with Classic Rose
+    padding: 20px; // Add some padding
+    max-width: 800px; // Limit the width of the box
+    margin: 0 auto; // Center the box horizontally
+    background-color: $background-color; // Use Bone-white as background for the event section
+    border-radius: 10px; // Add rounded corners
+    box-shadow: 0 4px 15px rgba(251, 200, 224, 0.5); // Add a pink shadow
+
+    // Adjust layout for smaller screens
+    @media only screen and (max-width: 768px) {
+        padding: 15px; // Less padding on tablets
+        max-width: 90%; // Shrink the width for tablets
+    }
+    @media only screen and (max-width: 576px) {
+        padding: 10px; // Less padding on smartphones
+        max-width: 95%; // Shrink the width for smartphones
+    }
+}
+
+// Text styling and spacing between sections
+.center-box p {
+    margin-bottom: 20px; // Space between paragraphs
+    line-height: 1.6; // Line spacing for readability
+}
+
+// Booking link styling with button and image
+.booking-link {
+    @include flex-center; // Center the link content
+    margin-top: 20px; // Space above the button section
+    text-decoration: none; // Remove underline from the link
+
+    img {
+        margin-right: 10px; // Space between image and text
+    }
+
+    p {
+        display: inline-block; // Ensure text is inline with image
+        background-color: $primary-color; // Use Classic Rose for background
+        color: white; // White text
+        padding: 10px 15px; // Padding for button
+        border-radius: 5px; // Rounded corners for the button
+        cursor: pointer; // Pointer cursor on hover
+
+        // Adjust button padding for smaller screens
+        @media only screen and (max-width: 768px) {
+            padding: 8px 12px; // Smaller padding for tablets
+        }
+        @media only screen and (max-width: 576px) {
+            padding: 5px 10px; // Smaller padding for smartphones
+        }
+
+        // Hover effect for button
+        &:hover {
+            background-color: $secondary-color; // Change to English Vermillion on hover
+        }
+    }
+
+    // Hover effect for the image as well
+    &:hover img {
+        opacity: 0.8; // Slightly fade the image on hover
+    }
+}

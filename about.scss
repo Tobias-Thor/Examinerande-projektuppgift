@@ -1,0 +1,224 @@
+// ==================
+// VARIABLES
+// ==================
+// Define reusable values for layout, fonts, and basic styling
+$border-radius: 10px; // Standard border radius
+$margin-top: 20px; // General top margin for sections
+$primary-color: #333; // Primary text color
+$secondary-color: #555; // Secondary text color
+$shadow-color: rgba(0, 0, 0, 0.1); // Shadow color for elements
+$font-stack: 'Arial', sans-serif; // Main font stack
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(251, 200, 224, 0.5); // Box shadow effect
+$box-padding: 15px; // Default padding for boxes
+$body-bg-color: #F9F6EE; // Main background color
+$section-bg-color: $body-bg-color; // Background color for sections
+$max-section-width: 800px; // Maximum width for "Om oss" section
+$container-padding: 20px; // Standard padding for containers
+$button-bg-color: #FBC8E0; // Button background color
+$button-hover-color: #D24848; // Button hover color
+
+@use 'SASS/mixins' as *;
+
+// ==================
+// GLOBAL STYLES
+// ==================
+// Apply basic styles for the body
+//body {
+  //background-color: $body-bg-color; // Set the body background color
+  //font-family: $font-stack; // Set the main font
+  //margin: 0;
+  //padding: 0;
+  //box-sizing: border-box;
+  //line-height: 1.6; // Set line height for readability
+//}
+
+// Main container styling
+main {
+  width: 100%; // Full width for responsiveness
+  padding: $container-padding; // Consistent padding around the content
+  margin: 0 auto; // Center the main container
+  max-width: 1200px; // Constrain the main layout for large screens
+}
+
+// ==================
+// COMPONENT STYLES
+// ==================
+
+// Image container styling
+.image-container {
+  @include mixins.mp-flex-center; // Center the image container
+  margin-top: $margin-top;
+
+  img {
+    @include mixins.mp-img-style($border-radius, 100%, auto); // Image fills container, scales responsively
+  }
+}
+
+// "Om oss" section styling
+.about-us {
+  background-color: $section-bg-color; // Set consistent background color
+  margin: 20px auto;
+  padding: 20px;
+  width: 100%;
+  max-width: $max-section-width; // Limit the width for larger screens
+  @include mixins.mp-box-style(); // Apply consistent box style
+
+  h2 {
+    font-size: 2em;
+    margin-bottom: 15px;
+    color: $primary-color; // Primary color for headings
+    text-align: center;
+  }
+
+  p {
+    font-size: 1em;
+    color: $secondary-color; // Paragraph text color
+    margin-bottom: 15px;
+  }
+}
+
+// Flex container for the contact and map sections
+.info-wrapper {
+  display: flex;
+  justify-content: space-between; // Space between contact info and map
+  gap: 20px; // Consistent gap between elements
+  margin: 20px 0;
+
+  @media (max-width: 1024px) {
+    flex-direction: column; // Stack elements vertically on tablets
+  }
+}
+
+// Contact information and form styling
+.contact-info {
+  flex: 1; // Flex property for equal width
+  @include mixins.mp-box-style(); // Apply consistent box style
+
+  address {
+    p {
+      margin-bottom: 10px;
+    }
+  }
+
+  // Styling for the contact form
+  .contact-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column; // Stack form elements
+    gap: 10px; // Space between form fields
+
+    label {
+      font-size: 1em;
+      color: $primary-color; // Consistent text color
+    }
+
+    input, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      width: 100%; // Full width of the form fields
+      box-sizing: border-box;
+    }
+
+    button {
+      @include mixins.mp-button-style($button-bg-color, $button-hover-color); // Using the button mixin
+    }
+  }
+}
+
+// Map container styling
+.map-container {
+  flex: 1; // Flex property for equal width
+  @include mixins.mp-box-style(); // Apply consistent box style
+
+  iframe {
+    width: 100%; // Full width of the container
+    height: 300px; // Set iframe height
+    border: none; // Remove border for clean look
+  }
+
+  @media (max-width: 768px) {
+    iframe {
+      height: 200px; // Adjust iframe height on smaller screens
+    }
+  }
+}
+
+// ==================
+// MEDIA QUERIES FOR RESPONSIVENESS
+// ==================
+
+// Adjust styles for tablets and medium screens
+@media (max-width: 1024px) {
+  .about-us {
+    max-width: 100%; // Full width on tablets
+    padding: 15px; // Adjust padding for smaller screens
+  }
+
+  h2 {
+    font-size: 1.6em; // Adjust heading size
+  }
+
+  p {
+    font-size: 0.9em; // Adjust paragraph size
+  }
+}
+
+// Adjust styles for small tablets and large phones
+@media (max-width: 768px) {
+  .about-us {
+    max-width: 100%; // Full width on smaller screens
+    padding: 15px;
+    margin: 10px auto;
+  }
+
+  h2 {
+    font-size: 1.4em; // Smaller heading size
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-size: 0.85em; // Smaller paragraph size
+  }
+}
+
+// Adjust styles for small phones and very small screens
+@media (max-width: 480px) {
+  .about-us {
+    padding: 10px; // Reduce padding for small screens
+    margin: 10px auto;
+    max-width: 100%; // Full width for small screens
+    background-color: $section-bg-color; // Maintain consistent background
+    border-radius: $border-radius;
+
+    h2 {
+      font-size: 1.2em;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 0.8em; // Reduce paragraph size for readability
+      margin-bottom: 8px;
+    }
+  }
+
+  .contact-form {
+    gap: 5px; // Reduce gap for compact layout
+
+    input, textarea {
+      padding: 8px;
+    }
+
+    button {
+      padding: 8px 16px;
+      font-size: 0.9em;
+    }
+  }
+
+  .map-container iframe {
+    height: 150px; // Adjust iframe height for small screens
+  }
+}
+
+
+
