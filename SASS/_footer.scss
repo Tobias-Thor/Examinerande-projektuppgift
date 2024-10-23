@@ -1,0 +1,31 @@
+@use 'variables';
+
+
+footer{
+    /* Pink background for the footer */
+    background-color: #FBC8E0;
+    ul{/* Remove bullet points */
+        list-style: none;
+        display: flex;
+        justify-content: flex-end;
+        /* Small margin for the list */
+        margin: 0.25rem;
+
+        li{ /* Spacing between list items */
+            margin: 0.75rem;
+            a{
+                
+                img{
+                    /*width for images inside links */
+                    width: 2rem;
+
+                    &:hover{
+                        /*Change color for hover */
+                        filter: brightness(0) saturate(100%) invert(8%) sepia(99%) saturate(6795%) hue-rotate(359deg) brightness(102%) contrast(114%);
+                    }
+                }
+            }
+
+        }
+    }
+}

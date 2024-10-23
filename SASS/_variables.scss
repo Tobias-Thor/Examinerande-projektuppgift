@@ -1,0 +1,38 @@
+$bar-width: 60px;
+$bar-height: 10px;
+$bar-gap: 10px;
+$bar-margin: 12px;
+$meny-bg-color: rgba(58, 58, 58, 0.911);
+$meny-text-color: white;
+$meny-hight: calc($bar-width * 3 + $bar-gap * 2);
+
+$x-width: calc($meny-hight * 2 / 1.41421356237);
+
+/* COLORS AS VARIABLES */
+$pink-color: #FBC8E0; // Theme-color
+$background-color: #F9F6EE; // Theme-color
+$gray-color: #333; // Complementary color
+$red-color: #D24848; // Theme-color, use sparingly
+$white-color: #FFF5F7; // Complementary color
+$shadow-color: $pink-color;
+$text-color: #333; // Slightly grey for text
+
+
+// ==================
+// VARIABLES
+// ==================
+// Define reusable values for layout, fonts, and basic styling
+$border-radius: 10px; // Standard border radius
+$margin-top: 20px; // General top margin for sections
+$primary-color: #333; // Primary text color
+$secondary-color: #555; // Secondary text color
+$shadow-color: rgba(0, 0, 0, 0.1); // Shadow color for elements
+$font-stack: 'Arial', sans-serif; // Main font stack
+$box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 12px rgba(251, 200, 224, 0.5); // Box shadow effect
+$box-padding: 15px; // Default padding for boxes
+$body-bg-color: #F9F6EE; // Main background color
+$section-bg-color: $body-bg-color; // Background color for sections
+$max-section-width: 800px; // Maximum width for "Om oss" section
+$container-padding: 20px; // Standard padding for containers
+$button-bg-color: #FBC8E0; // Button background color
+$button-hover-color: #D24848; // Button hover color
