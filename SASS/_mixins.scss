@@ -66,3 +66,53 @@ with this code...
 @mixin box-shadow {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 12px $shadow-color;
 }
+
+
+
+@use 'SASS/_variables' as *;
+
+// ==================
+// ismail MIXINS
+// ==================
+
+// Mixin for centering flex items horizontally and vertically
+@mixin mp-flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// Mixin for responsive images with object-fit
+@mixin mp-img-style($radius, $width, $height) {
+  width: $width;
+  height: $height;
+  object-fit: cover; // Maintain aspect ratio
+  border-radius: $radius;
+}
+
+// Mixin for adding box shadows
+@mixin mp-box-shadow($shadow) {
+  box-shadow: $shadow;
+}
+
+// Mixin for consistent box styling
+@mixin mp-box-style($padding: vars.$box-padding) {
+  padding: $padding;
+  border-radius: vars.$border-radius;
+  @include mp-box-shadow(vars.$box-shadow);
+}
+
+// Mixin for button styling
+@mixin mp-button-style($bg-color: vars.$button-bg-color, $hover-color: vars.$button-hover-color) {
+  background-color: $bg-color;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: $hover-color;
+  }
+}
