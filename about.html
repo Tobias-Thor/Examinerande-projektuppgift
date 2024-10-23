@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>om Oss</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+ 
+    <link rel="stylesheet" href="">
+   <link rel="stylesheet" href="../src/main.css" />
+    <meta name="description" content="Pärmar & Poesi is a family-owned bookstore with a wide range of books and cultural events. Visit us in Bokstaden.">
+      
+</head>
+  <body>
+    <header>
+      <img
+        src="../images/Screenshot_2024-10-18_at_11.17.50.png"
+        class="Logo"
+        alt="Företagets logotyp"
+      />
+      <label aria-label="Byt mellan mörkt och ljust tema"
+        ><input type="checkbox" class="Dark-toggle" /><img
+          src="../images/icons/dark-theme-svgrepo-com.svg"
+          alt="Mörkt och ljust tema-ikon"
+          class="Dark-icon"
+      /></label>
+      <label class="hamburger-menu" aria-label="Meny"
+        ><input type="checkbox"
+      /></label>
+      <nav aria-label="Huvudnavigation">
+        <ul>
+          <li><a href="../index.html">Hem</a></li>
+          <li><a href="../pages/book-news.html">Boknyheter</a></li>
+          <li><a href="../pages/event.html">Evenemang</a></li>
+          <li><a href="about-us.html">Om Oss</a></li>
+        </ul>
+      </nav>
+    </header>
+
+
+    <main>
+      <!-- Image Section -->
+      <section class="image-container">
+        <img
+          src="../images/4304303f-0151-40a1-9058-2838a5447aaf.webp"
+          alt="familj image"
+        />
+      </section>
+
+      <!-- This section is about the "About Us" content -->
+      <section class="about-us p-6">
+        <!-- This is the heading for the "About Us" section -->
+        <h2>Om oss</h2>
+
+        <!-- These paragraphs explain the history and values of the bookshop -->
+        <p>
+          Välkommen till Pärmar & Poesi, en familjeägd bokhandel som hyllar
+          kärleken till böcker och gemenskap. Vi grundades av Pernilla Sjögrund,
+          vars passion för litteratur går tillbaka till hennes barndom. Med en
+          familj som alltid delade och diskuterade böcker, ville Pernilla skapa
+          en plats där fler kunde uppleva samma magi som böcker kan ge.
+        </p>
+
+        <p>
+          Tillsammans med sin kreativa syster Camilla, som står bakom butikens
+          charmiga design och visuella identitet, och sin teknikintresserade man
+          Erik, som ser till att vår digitala närvaro fungerar smidigt, har de
+          skapat en bokhandel med hjärta och själ.
+        </p>
+
+        <p>
+          Vi har även fått värdefull hjälp av våra barn, Alva och Lukas, som med
+          stor entusiasm engagerar sig i allt från våra bokklubbar till att
+          sköta våra sociala medier. Det är deras energi och kärlek för böcker
+          som hjälper till att skapa den varma och inbjudande atmosfären som
+          Pärmar & Poesi är känt för.
+        </p>
+
+        <p>
+          Hos oss hittar du inte bara ett brett utbud av böcker, utan även en
+          plats för kulturella evenemang, boklanseringar och läsecirklar. Vi
+          tror på att böcker kan föra människor samman och strävar efter att
+          vara en mötesplats för alla som vill utforska litteraturens värld.
+        </p>
+
+        <p>Vi ser fram emot att välkomna dig till vår bokälskande gemenskap!</p>
+      </section>
+
+      <!-- Contact and Map Section: Wrapper for both -->
+      <section class="info-wrapper">
+        <!-- Contact Info Section -->
+        <article class="contact-info">
+          <h2>Kontakta oss</h2>
+          <address>
+            <p><strong>Adress:</strong> Storgatan 12, 123 45 Bokstaden</p>
+            <p><strong>Email:</strong> info@parmarpoesi.se</p>
+            <p><strong>Telefon:</strong> 070-123 45 67</p>
+          </address>
+
+          <!-- Contact Form -->
+          <form class="contact-form">
+            <label for="name">Namn:</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              aria-label="Namn"
+            />
+
+            <label for="email">E-post:</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              aria-label="E-post"
+            />
+
+            <label for="message">Meddelande:</label>
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              required
+              aria-label="Meddelande"
+            ></textarea>
+
+            <button type="submit">Skicka</button>
+          </form>
+        </article>
+
+        <!-- Map Section -->
+        <aside class="map-container">
+          <h2>Hitta oss</h2>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.835434509366!2d144.95373531531883!3d-37.816279379751734!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f3f87a87%3A0xf577dd0c5ed4d8e8!2sStorgatan%2012!5e0!3m2!1sen!2sse!4v1642998434568!5m2!1sen!2sse"
+            width="100%"
+            height="300"
+            style="border: 0"
+            allowfullscreen=""
+            loading="lazy"
+          >
+          </iframe>
+        </aside>
+      </section>
+    </main>
+    <footer aria-label="Sociala medier">
+      <ul>
+        <li>
+          <a href="#"
+            ><img src="../images/icons/youtube.svg" alt="Youtube-logotyp"
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="../images/icons/tiktok.svg" alt="Tiktok-logotyp"
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="../images/icons/instagram.svg" alt="Instagram-logotyp"
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="../images/icons/twitter-x.svg" alt="Twitter-X-logotyp"
+          /></a>
+        </li>
+        <li>
+          <a href="#"
+            ><img src="../images/icons/facebook.svg" alt="Facebook-logotyp"
+          /></a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>
