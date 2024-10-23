@@ -1,0 +1,13 @@
+{
+  "dependencies": {
+    "sass": "^1.79.5"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  },
+  "scripts": {
+    "watch:sass": "sass main.scss ./src/main.css",
+    "watch:tailwind": "npx tailwindcss -i ./src/main.css -o ./src/main.css --minify --watch",
+    "build": "npm run watch:sass && npm run watch:tailwind"
+  }
+}

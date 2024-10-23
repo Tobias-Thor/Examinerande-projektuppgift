@@ -1,0 +1,111 @@
+@use 'SASS/_reset' as *;
+@use 'SASS/_variables' as *;
+@use 'SASS/_mixins' as *;
+@use 'SASS/_footer' as *;
+@use 'SASS/_header' as *;
+@use 'SASS/about' as *;
+@use 'SASS/_index' as *;
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body:has(.Dark-toggle:checked){
+    @include mixins.dark-style;
+}
+
+html{
+    height: 100vh;
+    body{
+        /* Make the body element fill the viewport */
+        height: 100vh;
+         /* Layout as a column, useful for header-main-footer structure */
+       
+        @include mixins.flex-column;  
+        font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-size: 1.3rem; // For responsiveness
+        background-color: $background-color;
+        color: $gray-color;
+        // Adjust font size for smaller screens
+        @media only screen and (max-width: 768px) {
+        font-size: 1rem; // Smaller text on tablets
+        }
+        @media only screen and (max-width: 576px) {
+        font-size: 0.9rem; // Smaller text on smartphones
+        }
+        
+    }
+
+
+}
+
+/* MEDIA QUERYS */
+  /* Layout changes for smaller screens */
+  @media (max-width: 600px) {
+    article {
+      flex-direction: column; 
+    }  
+  
+    .article-img {
+      flex: 0 0 auto; /* Remove the fixed width */
+      margin-bottom: 15px; /* Add spacing under images */
+    }
+
+    }
+
+ /* Media query for screens larger than 720px */
+@media screen and (min-width: 720px) {
+    html{
+        body{
+            header {
+                /* Light background for header on larger screens */
+                background-color: #F9F6EE;
+                /*shadow effect*/
+                box-shadow: 2px 4px 8px #FBC8E0 ;
+                display: flex;
+                justify-content:space-between;
+                align-items: center;
+                width: 100%;
+                /* Hide hamburger menu on larger screens */
+                label.hamburger-menu::before,
+                label.hamburger-menu::after,
+                label.hamburger-menu input {
+                    display: none;
+                }
+        
+                nav {
+                    
+                    display: block;
+                    width: 100%;
+        
+                    ul {
+                        display: flex;
+                        justify-content: flex-end;
+                        width: 100%;
+                        list-style: none;
+        
+                        li {
+                            margin: 0.25rem;
+                            padding: 0.25rem 0.5rem;
+        
+                            a {
+                                color: black;
+                                text-align: left;
+                            }
+                        }
+                    }
+                }
+        
+                img.Logo {
+                    position: relative;
+                    width: 10%;
+                    height: auto;
+                }
+                img.Dark-icon {
+                    margin-top: 0;
+                }
+            }
+        }
+        
+        }
+    }
