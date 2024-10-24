@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* COLORS AS VARIABLES */
+/* Mixin for flex-layout */
+/* Use mixin for flex-layout  
+with this code...
+
+.flex-container {
+  @include flex-layout;
+} 
+
+*/
+/* SECTION WITH MIXINS */
+/* For flex-box-layout */
+/* Mixin for box-shadow */
+/* BASIC STYLING */
+body {
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+  font-size: 1.3rem;
+  background-color: #F9F6EE;
+  color: #333;
+}
+body article {
+  display: flex;
+  flex-direction: row;
+  gap: 25px;
+  margin: 25px;
+  background-color: #F9F6EE;
+  overflow: hidden; /* Prevents content overflow */
+  max-width: 100%; /* Ensures article doesn't exceed container width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 6px 12px #FBC8E0;
+}
+body .flex-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  margin: 20px;
+}
+body .article-img {
+  flex: 0 0 40%; /* Make image wider in desktop-mode */
+}
+body .article-img img {
+  width: 100%;
+  height: auto;
+  display: block;
+  -o-object-fit: cover;
+     object-fit: cover; /* Too make sure that images covers all of the space */
+}
+body .article-text {
+  flex: 1;
+  padding: 20px;
+  overflow-wrap: break-word; /* Breaks long words if necessary */
+}
+body .article-text h1 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+body .article-text p {
+  font-size: 1.3rem;
+  font-weight: normal;
+}
+
+.article-text {
+  text-align: left;
+  padding: 0 20px; /* Adjust padding for better text-layout */
+}
+
+/* Layout changes for larger screens */
+@media (max-width: 600px) {
+  article {
+    flex-direction: row;
+    gap: 15px;
+  }
+  .article-img {
+    order: 1; /* Ensure the image is shown first */
+    flex: 0 0 auto; /* Remove the fixed width */
+    margin-bottom: 15px; /* Add spacing under images */
+  }
+  /* Layout adjustments for smaller screens */
+  /* BLOCKQUOTE-STYLING */
+  /* STYLING OF TABLE */
+}
+@media (max-width: 600px) and (max-width: 600px) {
+  article {
+    flex-direction: row;
+  }
+  .article-img {
+    order: 1;
+    max-width: 100%;
+    margin-bottom: 15px;
+  }
+  .article-text {
+    order: 2;
+    padding: 15px; /* Adjust padding for mobile readability */
+    overflow-wrap: break-word; /* Force text to break to fit within flex-item */
+    word-break: break-word; /* Break long words if necessary */
+  }
+}
+@media (max-width: 600px) {
+  blockquote {
+    font-weight: bolder;
+    border-left: 4px #D24848;
+  }
+  article h2 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    text-align: left; /* Centering the heading */
+    color: #333;
+  }
+  article table {
+    width: 100%;
+    background-color: #F9F6EE;
+    border: 2px solid #D24848; /* Red main-border */
+    border-collapse: collapse; /* Make sure that borders don't overlap */
+    margin: 0 auto; /* Centers the table */
+  }
+  article table th, article table td {
+    text-align: left; /* Left-alignment of text */
+    padding: 10px;
+    border: 2px solid #D24848; /* Red lines around cells */
+  }
+  article table th {
+    font-weight: bold;
+    background-color: #FFF5F7; /* Background for header */
+  }
+  article table tr:nth-child(even) {
+    background-color: #FBC8E0; /* each and other row light-pink */
+  }
+}
+@media (max-width: 600px) and (max-width: 600px) {
+  article table {
+    display: block;
+    overflow-x: auto; /* Makes table scrollable on smaller screens */
+  }
+}/*# sourceMappingURL=book-news-important-text-changes.css.map */
